@@ -1,0 +1,83 @@
+:root {
+    --licht: #FAEED1;
+    --donker: #607274;
+    --accent1: #DED0B6;
+    --accent2: #B2A59B;
+}
+
+body {
+    margin: 0px;
+    background-color: var(--licht);
+}
+
+nav {
+    color: var(--licht);
+    background-color: var(--donker);
+    text-align: center;
+    padding: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.main {
+    color: var(--donker);
+    text-align: center;
+    padding: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.input {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.abc {
+    width: 33.33%;
+}
+
+#inputA,#inputB,#inputC {
+    appearance: none;
+	border: 2px solid var(--accent2);
+	outline: none;
+	border-bottom: .2em solid var(--accent1);
+	background: var(--licht);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: var(--donker);
+    width: 80%;
+}
+
+#submit,#reset {
+    appearance: none;
+	border: .2em solid var(--donker);
+	background: hsl(0 0 0/0);
+	padding: .85em 1.5em;
+	color: var(--donker);
+	border-radius: 2em;
+	transition: 0.5s;
+}
+
+#submit:hover,#reset:hover {
+    background: var(--donker);
+	color: var(--accent1);
+}
+
+.button {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.results {
+    text-align: center;
+    width: 100%;
+}

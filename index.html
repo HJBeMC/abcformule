@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>ABC Formule - Hugo Blokzijl</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <nav>
+            <h1>ABC Formule</h1>
+            <p>Hugo Blokzijl</p>
+        </nav>
+        <div class="main">
+            <h2>Vul de A, B en C van je derdegraads kwadratische vergelijking.</h2>
+            <div class="input">
+                <div class="abc">
+                    <div>
+                        <h3>A</h3>
+                    </div>
+                    <div>
+                        <input id="inputA" min="1" type ="number" value="1">
+                    </div>
+                </div>
+                <div class="abc">
+                    <div>
+                        <h3>B</h3>
+                    </div>
+                    <div>
+                        <input id="inputB" type ="number" value="0">
+                    </div>
+                </div>
+                <div class="abc">
+                    <div>
+                        <h3>C</h3>
+                    </div>
+                    <div>
+                        <input id="inputC" type ="number" value="0">
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <input id="submit" type="submit" value="Bereken!" onclick="calculate()">
+                <input id="reset" type="submit" value="Reset!" onclick="reset()">
+            </div>
+            <div class="results">
+                <h2 id="output1">&zwnj;</h2>
+                <h2 id="outputv">&zwnj;</h2>
+                <h2 id="output2">&zwnj;</h2>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    function calculate() {
+        var A = parseFloat(document.getElementById("inputA").value);
+        var B = parseFloat(document.getElementById("inputB").value);
+        var C = parseFloat(document.getElementById("inputC").value);
+        var D = (B * B) + (- 4 * A * C);
+        console.log("De discriminant is: " + D);
+        if (D < 0) {
+            document.getElementById("output1").innerHTML = "&zwnj;";
+            document.getElementById("outputv").innerHTML = "Geen oplossing";
+            document.getElementById("output2").innerHTML = "&zwnj;";
+        } else if (D == 0) {
+            var result1 = (-B + Math.sqrt (D)) / (2 * A)
+            document.getElementById("output1").innerHTML = "&zwnj;";
+            document.getElementById("outputv").innerHTML = result1;
+            document.getElementById("output2").innerHTML = "&zwnj;";
+        } else if (D > 0) {
+            var result1 = (-B + Math.sqrt (D)) / (2 * A)
+            var result2 = (-B - Math.sqrt (D)) / (2 * A)
+            document.getElementById("output1").innerHTML = result1;
+            document.getElementById("outputv").innerHTML = 'OF';
+            document.getElementById("output2").innerHTML = result2;
+        } else {
+            document.getElementById("output1").innerHTML = "&zwnj;";
+            document.getElementById("outputv").innerHTML = "&zwnj;";
+            document.getElementById("output2").innerHTML = "&zwnj;";
+        }
+    }
+
+    function reset() {
+        document.getElementById("output1").innerHTML = "&zwnj;";
+        document.getElementById("outputv").innerHTML = "&zwnj;";
+        document.getElementById("output2").innerHTML = "&zwnj;";
+        document.getElementById("inputA").value = '1';
+        document.getElementById("inputB").value = '0';
+        document.getElementById("inputC").value = '0';
+    }
+</script>
